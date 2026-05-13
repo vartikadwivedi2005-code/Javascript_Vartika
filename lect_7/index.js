@@ -38,16 +38,16 @@ let canvas=document.querySelector("canvas")
       pen.fillText("Game Over!!!",50,100)
       return
     }
-    pen.fillStyle="red"
+    pen.fillStyle="#4cc9f0"
     pen.clearRect(0,0,1000,600)
     for(let a of snakeCell){
         pen.fillRect(a[0],a[1],cell,cell)
     }
        
-    pen.fillStyle="pink"
+    pen.fillStyle="black"
     pen.font="40px sans-sarif"
     pen.fillText(`${score}`,100,300)
-    pen.fillStyle="yellow"
+    pen.fillStyle="#f72585"
     pen.fillRect(random[0],random[1],cell,cell)
 
        
