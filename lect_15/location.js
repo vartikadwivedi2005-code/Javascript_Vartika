@@ -11,7 +11,7 @@ function getLocation(){
 
          
             let response = await fetch(
-              `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`
+              `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid={API key}`
             );
 
             let data = await response.json();
@@ -68,5 +68,3 @@ function getLocation(){
       }
 
     }
-
-document.getElementById("getLocationBtn").addEventListener("click", getLocation);
