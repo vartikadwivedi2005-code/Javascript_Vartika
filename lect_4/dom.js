@@ -14,5 +14,4 @@ inp.addEventListener("input",(e)=>{
     btn.addEventListener("click",(f)=>{
         H2.innerText=e.target.value
     })
-    
 })
