@@ -30,6 +30,7 @@ const questions = [
       answer: 1
     }
   ];
+  // 
 
 
   let currentQuestion = 0;
