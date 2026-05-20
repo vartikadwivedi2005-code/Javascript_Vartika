@@ -9,25 +9,63 @@
             display: flex;       
             flex-wrap: wrap;     
             justify-content: center; 
-            background-color: #f4f4f4; 
+            gap: 25px; 
+            background-color: #f7f9fc; 
             margin: 0;
-            padding: 20px;       
-            font-family: Arial, sans-serif; 
+            padding: 80px 20px 40px 20px;       
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
         }
+
         body > div {
             background-color: white; 
-            border: 1px solid #ccc;  
-            border-radius: 8px;      
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+            border: none; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
             box-sizing: border-box;  
+            width: 280px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease; 
+        }
+
+        body > div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        a button {
+            position: fixed; 
+            top: 20px;
+            right: 30px;
+            background-color: #1a1a1a; 
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 30px; 
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            z-index: 1000;
+        }
+
+        a button:hover {
+            background-color: #333333;
+        }
+
+        a button:active {
+            transform: scale(0.97); 
         }
     </style>
 </head>
 <body>
-        <a href="addtoCart.html">   
-    <button>addToCart</button>
-</a>
+    <a href="addtoCart.html">   
+        <button>🛒 View Cart</button>
+    </a>
     <script src="product.js"></script>
-  
 </body>
 </html>

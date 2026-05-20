@@ -10,10 +10,10 @@ fetch("https://dummyjson.com/products").then((res)=>{
         <img src="${a.
             thumbnail
             }" width="100%" >
-        <h2> ${a.title}</h2>
-        <h3> ${a.price}</h3>
-        <h4> ${a.return}</h4>
-        <h5> ${a.rating}</h5>
+        <h2>${a.title}</h2>
+        <h3>$${a.price}</h3>
+        <h4>✨ ${a.return}</h4>
+        <h5>⭐ ${a.rating}</h5>
         <button onclick="addToCart(${a.id})"> add </button>
         `
         // console.log(a.brand
