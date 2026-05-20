@@ -5,33 +5,100 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    body{
-    text-align: center;
-    font-family: Arial;
-    background-color: #b1cfeb;
-}
+    body {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #b1cfeb;
+        margin: 0;
+        padding: 40px 20px;
+        color: #2b3a4a;
+    }
 
-.board{
-    width: 320px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-}
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
 
-.box{
-    width: 100px;
-    height: 100px;
-    margin: 3px;
-    font-size: 40px;
-    cursor: pointer;
-    background: rgb(228, 196, 225);
-}
+    .board {
+        width: 318px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(4px);
+    }
 
-#reset{
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-}
+    .box {
+        width: 100px;
+        height: 100px;
+        font-size: 42px;
+        font-weight: 700;
+        cursor: pointer;
+        background: #e4c4e1;
+        color: #5c3d59;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .box:hover {
+        transform: translateY(-2px);
+        background: #ebd2ea;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .box:active {
+        transform: translateY(0);
+        scale: 0.98;
+    }
+
+    .box:disabled {
+        cursor: default;
+        background: rgba(228, 196, 225, 0.6);
+        transform: none;
+        box-shadow: none;
+    }
+
+    #msg {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-top: 25px;
+        min-height: 40px;
+        color: #3e5266;
+    }
+
+    #reset {
+        margin-top: 15px;
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        background-color: #2b3a4a;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease;
+    }
+
+    #reset:hover {
+        background-color: #3d5268;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    #reset:active {
+        transform: translateY(0);
+        scale: 0.98;
+    }
 </style>
 <body>
 
