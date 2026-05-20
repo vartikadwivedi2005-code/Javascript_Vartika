@@ -30,28 +30,34 @@ let canvas=document.querySelector("canvas")
   })
 
 
-  function draw(){
+ function draw(){
     if(gameOver==true){
       clearInterval(id)
-      pen.fillStyle="white"
+      pen.fillStyle="#ff007f" 
       pen.font="50px Roboto"
       pen.fillText("Game Over!!!",50,100)
       return
     }
-    pen.fillStyle="#4cc9f0"
-    pen.clearRect(0,0,1000,600)
+    
+    
+    pen.fillStyle="#1f2833" 
+    pen.fillRect(0,0,1000,600) 
+    
+    
+    pen.fillStyle="#00ffcc" 
     for(let a of snakeCell){
         pen.fillRect(a[0],a[1],cell,cell)
     }
-       
-    pen.fillStyle="black"
-    pen.font="40px sans-sarif"
-    pen.fillText(`${score}`,100,300)
-    pen.fillStyle="#f72585"
+        
+   
+    pen.fillStyle="rgba(255, 255, 255, 0.15)"
+    pen.font="bold 80px sans-serif"
+    pen.fillText(`${score}`, 470, 320) 
+    
+    
+    pen.fillStyle="#ff007f" 
     pen.fillRect(random[0],random[1],cell,cell)
-
-       
-  }
+}
   
   draw()
   function update(){
