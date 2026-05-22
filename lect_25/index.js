@@ -77,7 +77,7 @@
 // let user=structuredClone(obj);
 
 
-// let str ="js  js   js"
+let str ="js  js   js"
 // console.log(str.replace("js","jsx"));
 // console.log(str.replaceAll("js","jsx"));
 // console.log(str.split(""));
