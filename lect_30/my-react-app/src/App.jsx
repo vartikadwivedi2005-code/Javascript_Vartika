@@ -288,8 +288,8 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => {
         setApiData(data.products);
-      });
-  }, []);
+      })
+  }, [])
 
   return (
     <div className="products-container">
