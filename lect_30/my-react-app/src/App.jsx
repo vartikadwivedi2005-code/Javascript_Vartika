@@ -196,18 +196,136 @@
 // export default App
 
 
-import React from 'react'
-import Form from './Form'
+// import React from 'react'
+// import Form from './Form'
 
+// const App = () => {
+//   return (
+//     <div>
+//       <Form/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// Use Effect
+
+// import {useState} from 'react'
+// import { useEffect } from 'react'
+// const App = () => {
+//   let [count, setCount] = useState(0)
+//   useEffect(()=>{
+//     console.log("hello")
+//   }, [])
+
+//   return (
+//     <div>
+//       <h3>{count}</h3>
+//       <button onClick={()=>setCount(count+1)}>click</button>
+//     </div>
+// //   )
+// // }
+
+// // export default App
+
+
+// // Use Effect city change
+
+// // import {useState} from 'react'
+// // import { useEffect } from 'react'
+// // const App = () => {
+// //   let [count, setCount] = useState(0)
+// //   let [city, setCity] = useState("Indore")
+// //   useEffect(()=>{
+// //     console.log("hello")
+// //   }, [])
+
+// //   return (
+// //     <div>
+// //       <h3>{count}</h3>
+// //       <h2>{city}</h2>
+// //       <button onClick={()=>setCount(count+1)}>click</button>
+// //       <button onClick={(e)=>setCity("Bhopal")}>Change</button>
+// //     </div>
+// //   )
+// // }
+
+// // export default App
+
+// import {useState} from 'react'
+// import { useEffect } from 'react'
+
+// fetch("https://dummyjson.com/products").then((res)=>res.json()).then((data)=>{
+//   console.log(data);
+// })
+// const App = () => {
+//   let [count, setCount] = useState(0)
+//   let [city, setCity] = useState("Indore")
+//   useEffect(()=>{
+//     console.log("hello")
+//   }, [])
+
+//   return (
+//     <div>
+//      <h3>{count}</h3> 
+//       <h2>{city}</h2>
+      // <button onClick={()=>setCount(count+1)}>click</button>
+//       <button onClick={(e)=>setCity("Bhopal")}>Change</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+import { useState, useEffect } from 'react';
+import './App.css';
 const App = () => {
-  return (
-    <div>
-      <Form/>
-    </div>
-  )
-}
+  let [ApiData, setApiData] = useState([]);
 
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setApiData(data.products);
+      });
+  }, []);
+
+  return (
+    <div className="products-container">
+      <h2 className="main-title">Explore Our Products</h2>
+      <div className="products-grid">
+        {ApiData.map((a) => {
+          return (
+            <div className="cart-card" key={a.id}>
+              <img src={a.thumbnail} alt={a.title} />
+              <div className="card-body">
+                <div className="product-id">#{a.id}</div>
+                <div className="product-title">{a.title}</div>
+                <div className="product-price">${a.price}</div>
+                <div className="product-rating">⭐ {a.rating}</div>
+              </div>
+              <button className="add-to-cart-btn">Add to Cart</button>
+            </div>
+          );
+        })}
+        
+      </div>
+    </div>
+  );
+};
 export default App
+
+
+
+
+
+
+
+
+
+
+
 
 
 
