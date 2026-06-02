@@ -1,4 +1,4 @@
-/* Base Layout Configurations */
+/* Base Layout Configurations
 body {
   background-color: #f8f9fa;
   margin: 0;
@@ -20,15 +20,15 @@ body {
 }
 
 /* Products Layout Grid */
-.products-grid {
+/* .products-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-}
+} */
 
 /* Individual Product Cards */
-.cart-card {
+/* .cart-card {
   background-color: white;
   border-radius: 12px;
   width: 260px;
@@ -38,38 +38,38 @@ body {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+} */
 
-.cart-card:hover {
+/* .cart-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Card Media Elements */
-.cart-card img {
+/* .cart-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   border-radius: 8px;
   background-color: #f1f3f5;
-}
+} */
 
 /* Card Text Inner Container */
-.card-body {
+/* .card-body {
   margin: 12px 0 14px 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
+} */ */
 
 /* Product Properties Styling */
-.product-id {
+/* .product-id {
   font-size: 13px;
   color: #0353a4;
   font-weight: 600;
-}
+} */
 
-.product-title {
+/* .product-title {
   font-size: 18px;
   font-weight: 600;
   color: #212529;
@@ -83,16 +83,16 @@ body {
   font-size: 16px;
   font-weight: 700;
   color: #37b24d; /* Clean Eco Green */
-}
+/* } */ */
 
-.product-rating {
+/* .product-rating {
   font-size: 13px;
   font-weight: 500;
   color: #fcc419; /* Golden Yellow Star Badge */
-}
+/* } */
 
 /* Add to Cart Button */
-.add-to-cart-btn {
+/* .add-to-cart-btn {
   width: 100%;
   background-color: #000000;
   color: white;
@@ -102,10 +102,26 @@ body {
   font-weight: 600;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
+  transition: background-color 0.2s ease; */
+/* } */ */
 
-.add-to-cart-btn:hover {
+/* .add-to-cart-btn:hover {
   background-color: #333333;
-}
+} */ */
 
+
+
+#nav{
+  height: 50px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+li{
+  color: snow;
+}

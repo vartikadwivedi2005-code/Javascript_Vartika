@@ -40,3 +40,14 @@
 // }
 
 // export default Home
+
+import React from 'react'
+
+const Home = () => {
+    console.log("hellooo");
+  return (
+    <div>Homeee</div>
+  )
+}
+
+export default Home
