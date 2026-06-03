@@ -1,0 +1,138 @@
+/* ==========================================================================
+   1. The Ultimate Center Fix 
+   Targeting html and body ensures the browser gives us the full window height
+   ========================================================================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; /* Explicitly forces full screen height */
+  background-color: #0d0e12; /* Changes the whole page background to dark */
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================================================
+   2. The Black Container Box
+   ========================================================================== */
+.todo-wrapper {
+  width: 90%;
+  max-width: 360px; /* Perfectly slim profile */
+  background: #17191e; /* Deep midnight black box */
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #262930;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  
+  /* Centers all fields internally too */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  box-sizing: border-box;
+}
+
+/* Header Text (Now clearly visible) */
+h1 {
+  color: #ffffff; 
+  font-size: 22px;
+  margin: 0 0 16px 0;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+/* Micro Inputs */
+input {
+  width: 100%;
+  background: #20232b;
+  border: 1px solid #2e323d;
+  border-radius: 6px;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 13px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* Primary Add Button */
+button:nth-of-type(1) {
+  width: 100%;
+  background: #4f46e5; /* Royal Indigo blue */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.2s;
+}
+
+button:nth-of-type(1):hover {
+  background: #3b32d4;
+}
+
+/* ==========================================================================
+   3. Individual To-Do Rows
+   ========================================================================== */
+.todo-item {
+  width: 100%;
+  background: #1c1f26;
+  border: 1px solid #262930;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.todo-item h3 {
+  color: #e2e8f0;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Inline Mini Tab/Pill Buttons */
+.todo-item button {
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 3px 8px 3px;
+  background: #2a2f3b;
+  color: #a0aec0;
+  transition: all 0.15s ease;
+}
+
+/* Pill Hover Effects */
+.todo-item button:nth-of-type(1):hover {
+  background: #ef4444; /* Red for Delete */
+  color: white;
+}
+
+.todo-item button:nth-of-type(2):hover {
+  background: #3b82f6; /* Blue for Edit */
+  color: white;
+}
+
+/* Edit element spacing */
+.todo-item input {
+  margin-top: 4px;
+  margin-bottom: 0;
+  background: #121418;
+}

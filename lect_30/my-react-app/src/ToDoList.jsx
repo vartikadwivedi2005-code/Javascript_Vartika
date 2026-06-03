@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './ToDoList.css';
 import { useEffect } from 'react';
 const ToDoList = () => {
 
@@ -36,29 +36,24 @@ const ToDoList = () => {
      },[todos])
 
     
-
-  return (
-    <div>
-      <h1>To Do List</h1>
-      
-      <input onChange={(e) => setInput(e.target.value)} />
-      
-      <button onClick={() => setTodos([...todos, input])}>Add</button>
-      
-      
-      {
-        todos.map((a,index) => {
-            return <div>
+return (
+  <div className="todo-wrapper">
+    <h1>To Do List</h1>
+    <input onChange={(e) => setInput(e.target.value)} />
+    <button onClick={() => setTodos([...todos, input])}>Add</button>
+    
+    {todos.map((a, index) => {
+        return (
+          <div key={index} className="todo-item"> 
             <h3>{a}</h3>
             <button onClick={() => d(index)}>Delete</button>
             <button onClick={() => e(index)}>Edit</button>
             <input onChange={(e) => setInput(e.target.value)} />
-            
-            </div>
-        })
-      }
-    </div>
-  );
+          </div>
+        )
+    })}
+  </div>
+);
 };
 
 export default ToDoList;
