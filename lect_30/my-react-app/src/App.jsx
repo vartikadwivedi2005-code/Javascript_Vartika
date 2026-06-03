@@ -331,24 +331,38 @@
 // export default App
 
 
+// import React from 'react'
+// import NavBar from "./NavBar"
+// import { Route, Routes } from "react-router-dom"
+// import Home from "./Home"
+// import About from "./About"
+// import Task from "./Task"
+// import ContactUs from "./ContactUs"
+
+// const App = () => {
+//   return (
+//     <div>
+//       <NavBar/>
+//       <Routes>
+//         <Route    path="/"   element={<Home/>}/>
+//         <Route    path="/about"   element={<About/>}/>
+//         <Route    path="/task"   element={<Task/>}/>
+//         <Route    path="/contact"   element={<ContactUs/>}/>
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
 import React from 'react'
-import NavBar from "./NavBar"
-import { Route, Routes } from "react-router-dom"
-import Home from "./Home"
-import About from "./About"
-import Task from "./Task"
-import ContactUs from "./ContactUs"
+import ToDoList from './ToDoList'
 
 const App = () => {
   return (
     <div>
-      <NavBar/>
-      <Routes>
-        <Route    path="/"   element={<Home/>}/>
-        <Route    path="/about"   element={<About/>}/>
-        <Route    path="/task"   element={<Task/>}/>
-        <Route    path="/contact"   element={<ContactUs/>}/>
-      </Routes>
+      <ToDoList/>
     </div>
   )
 }

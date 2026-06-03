@@ -17,9 +17,9 @@ body {
   color: #212529;
   margin-bottom: 40px;
   font-weight: 700;
-}
+} */
 
-/* Products Layout Grid */
+/* Products Layout Grid
 /* .products-grid {
   display: flex;
   flex-wrap: wrap;
@@ -77,13 +77,13 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 2px;
-}
+} */
 
-.product-price {
+/* .product-price {
   font-size: 16px;
   font-weight: 700;
   color: #37b24d; /* Clean Eco Green */
-/* } */ */
+/* } */
 
 /* .product-rating {
   font-size: 13px;
@@ -107,21 +107,63 @@ body {
 
 /* .add-to-cart-btn:hover {
   background-color: #333333;
-} */ */
+} */
 
 
-
+/* 
 #nav{
   height: 50px;
   background-color: black;
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-*{
+} */
+/* *{
   margin: 0;
   padding: 0;
-}
-li{
+} */
+/* li{
   color: snow;
+} */
+
+
+
+/* ToDoList.css */
+.todo-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 30px auto;
+  max-width: 350px;
+  text-align: center;
+}
+
+.todo-input {
+  width: 60%;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Turns the border blue when you click inside */
+.todo-input:focus {
+  border-color: #007bff;
+}
+
+.todo-button {
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-left: 8px;
+  background-color: #28a745; /* Green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Makes the button slightly darker when hovered */
+.todo-button:hover {
+  background-color: #218838;
 }
