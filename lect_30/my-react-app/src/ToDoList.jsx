@@ -103,58 +103,89 @@
 // // export default ToDoList
 
 
-import React from 'react'
-import { useReducer } from 'react'
+import React, { useReducer } from 'react';
 
-const ToDoList = () => {
-  let initialData={
-    input:"",
-    todos:[]
-  }
-  function reducer(state,action){
-    if(action.type==="set_input"){
-      return {
-        ...state,input:action.payload
-      }
+const initialData = {
+    input: "",
+    todos: [],
+    index: null
+};
+
+function reducer(state, action) {
+    switch (action.type) {
+        case "SET_INP":
+            return {
+                ...state,
+                input: action.payload
+            };
+        case "ADD_TODO":
+            return {
+                ...state, 
+                todos: [...state.todos, state.input],
+                input: ""
+            };
+        case "DELET_TODO":
+            return {
+                ...state,
+                todos: state.todos.filter((_, id) => id !== action.payload)
+            };
+        case "EDIT_TODO":
+            return {
+                ...state,
+                input: state.todos[action.payload],
+                index: action.payload
+            };
+        case "UPDATE_TODO": {
+            const updatedTodos = [...state.todos];
+            updatedTodos[state.index] = state.input;
+            return {
+                ...state,
+                todos: updatedTodos,
+                input: "",
+                index: null
+            };
+        }
+        default:
+            return state;
     }
-    else if(action.type==="add_todo"){
-      return {
-        input:"",
-        todos:[...state.todos,state.input]
-      }
-    }
-    else if(action.type==="delete_todo"){
-      return {
-        ...state,
-        todos: state.todos.filter((_, i) => i !== action.payload)
-      }
-    }
-    else if(action.type==="edit_todo"){
-      let updatedTodos = [...state.todos];
-      updatedTodos[action.payload] = state.input;
-      return {
-        ...state,
-        todos: updatedTodos,
-        input: ""
-      }
-      
-    }
-    
-    return state
-  }
-  let [state,dispatch]=  useReducer(reducer,initialData)
-  return (
-    <div>
-      <input onChange={(e)=>dispatch({type:"set_input",payload:e.target.value})}/>
-      <button onClick={()=>dispatch({type:"add_todo"})}>Add</button>
-      <button onClick={()=>dispatch({type:"delete_todo",payload:0})}>Delete</button>
-      <button onClick={()=>dispatch({type:"edit_todo",payload:1})}>Edit</button>
-      {state.todos.map((a,index)=>{
-        return <h3 key={index}>{a}</h3>
-      })}
-    </div>
-  )
 }
 
+const Todo = () => { 
+    const [state, dispatch] = useReducer(reducer, initialData);
 
-export default ToDoList
+    function handleSubmit() {
+        if (state.input.trim() === "") return; 
+        
+        if (state.index !== null) {
+            dispatch({ type: "UPDATE_TODO" });
+        } else {
+            dispatch({ type: "ADD_TODO" });
+        }
+    }
+
+    return (
+        <div>        
+            <input  
+                name='input'  
+                value={state.input}  
+                onChange={(e) => dispatch({ type: "SET_INP", payload: e.target.value })}
+            />
+            <button onClick={handleSubmit}>
+                {state.index !== null ? "Update" : "Add"}
+            </button>
+            
+            {state.todos.map((todo, idx) => {
+               
+                return (
+                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <h4>{todo}</h4>
+                        <button onClick={() => dispatch({ type: "DELET_TODO", payload: idx })}>Delete</button>
+                        <button onClick={() => dispatch({ type: "EDIT_TODO", payload: idx })}>Edit</button>
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
+
+export default Todo;
