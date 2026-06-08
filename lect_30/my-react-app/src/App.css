@@ -1,16 +1,109 @@
-*{
+/* --- Global Resets --- */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Prevents padding from breaking item widths */
 }
 
-nav{
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* --- Navbar Styles --- */
+nav {
   background-color: black;
   height: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-li{
+
+li {
   color: snow;
+  list-style: none; /* Removes bullet points if you use <ul><li> */
+}
+
+/* --- Card Grid Container --- */
+/* (Note: Changed from #card to match your CSS choice, but remember to use className='card-container' instead of id to prevent bugs!) */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* Centers the grid on the screen */
+}
+
+/* --- Individual Product Card --- */
+.product-card {
+  height: 280px; /* Increased slightly from 200px to give text and buttons breathing room */
+  width: 171px;
+  background-color: snow;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Centers text and buttons horizontally */
+  text-align: center;
+  
+  /* Your customized shadow */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px; 
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* --- Image Styling --- */
+.img-container {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Keeps image aspect ratio perfect without stretching */
+}
+
+/* --- Typography & Buttons --- */
+h4 {
+  font-size: 0.85rem;
+  color: #333;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Puts '...' on long titles */
+  margin: 4px 0;
+}
+
+h6 {
+  font-size: 0.9rem;
+  color: #000;
+  font-weight: bold;
+}
+
+button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 6px 0;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #333;
 }

@@ -1,9 +1,8 @@
 import React from 'react'
 
 const About = () => {
-    // console.log("hellooo");
   return (
-    <div>Aboutttttt</div>
+    <div>About</div>
   )
 }
 
