@@ -103,7 +103,112 @@
 // // export default ToDoList
 
 
-import React, { useReducer } from 'react';
+// import React, { useReducer } from 'react';
+
+// const initialData = {
+//     input: "",
+//     todos: [],
+//     index: null
+// };
+
+// function reducer(state, action) {
+//     switch (action.type) {
+//         case "SET_INP":
+//             return {
+//                 ...state,
+//                 input: action.payload
+//             };
+//         case "ADD_TODO":
+//             return {
+//                 ...state, 
+//                 todos: [...state.todos, state.input],
+//                 input: ""
+//             };
+//         case "DELET_TODO":
+//             return {
+//                 ...state,
+//                 todos: state.todos.filter((_, id) => id !== action.payload)
+//             };
+//         case "EDIT_TODO":
+//             return {
+//                 ...state,
+//                 input: state.todos[action.payload],
+//                 index: action.payload
+//             };
+//         case "UPDATE_TODO": {
+//             const updatedTodos = [...state.todos];
+//             updatedTodos[state.index] = state.input;
+//             return {
+//                 ...state,
+//                 todos: updatedTodos,
+//                 input: "",
+//                 index: null
+//             };
+//         }
+//         default:
+//             return state;
+//     }
+// }
+
+// const Todo = () => { 
+//     const [state, dispatch] = useReducer(reducer, initialData);
+
+//     function handleSubmit() {
+//         if (state.input.trim() === "") return; 
+        
+//         if (state.index !== null) {
+//             dispatch({ type: "UPDATE_TODO" });
+//         } else {
+//             dispatch({ type: "ADD_TODO" });
+//         }
+//     }
+
+//     return (
+//         <div>        
+//             <input  
+//                 name='input'  
+//                 value={state.input}  
+//                 onChange={(e) => dispatch({ type: "SET_INP", payload: e.target.value })}
+//             />
+//             <button onClick={handleSubmit}>
+//                 {state.index !== null ? "Update" : "Add"}
+//             </button>
+            
+//             {state.todos.map((todo, idx) => {
+               
+//                 return (
+//                     <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+//                         <h4>{todo}</h4>
+//                         <button onClick={() => dispatch({ type: "DELET_TODO", payload: idx })}>Delete</button>
+//                         <button onClick={() => dispatch({ type: "EDIT_TODO", payload: idx })}>Edit</button>
+//                     </div>
+//                 );
+//             })}
+//         </div>
+//     );
+// };
+
+// export default Todo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React,{useReducer}from 'react'
+import './ToDoList.css';
 
 const initialData = {
     input: "",
@@ -111,7 +216,7 @@ const initialData = {
     index: null
 };
 
-function reducer(state, action) {
+function reducer(state,action){
     switch (action.type) {
         case "SET_INP":
             return {
@@ -124,18 +229,18 @@ function reducer(state, action) {
                 todos: [...state.todos, state.input],
                 input: ""
             };
-        case "DELET_TODO":
-            return {
+        case "DELETE_TODO":
+             return {
                 ...state,
                 todos: state.todos.filter((_, id) => id !== action.payload)
             };
         case "EDIT_TODO":
-            return {
+          return {
                 ...state,
                 input: state.todos[action.payload],
                 index: action.payload
             };
-        case "UPDATE_TODO": {
+         case "UPDATE_TODO": {
             const updatedTodos = [...state.todos];
             updatedTodos[state.index] = state.input;
             return {
@@ -148,10 +253,11 @@ function reducer(state, action) {
         default:
             return state;
     }
-}
+        
 
-const Todo = () => { 
-    const [state, dispatch] = useReducer(reducer, initialData);
+}
+const ToDoList = () => {
+     const [state, dispatch] = useReducer(reducer, initialData);
 
     function handleSubmit() {
         if (state.input.trim() === "") return; 
@@ -163,29 +269,34 @@ const Todo = () => {
         }
     }
 
-    return (
-        <div>        
+
+
+return (
+    <div className="todo-container">
+        <div className="input-group">
             <input  
+                className="todo-input"
                 name='input'  
+                placeholder="Add a new task..."
                 value={state.input}  
                 onChange={(e) => dispatch({ type: "SET_INP", payload: e.target.value })}
             />
-            <button onClick={handleSubmit}>
+            <button className="btn-primary" onClick={handleSubmit}>
                 {state.index !== null ? "Update" : "Add"}
             </button>
-            
-            {state.todos.map((todo, idx) => {
-               
-                return (
-                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <h4>{todo}</h4>
-                        <button onClick={() => dispatch({ type: "DELET_TODO", payload: idx })}>Delete</button>
-                        <button onClick={() => dispatch({ type: "EDIT_TODO", payload: idx })}>Edit</button>
-                    </div>
-                );
-            })}
         </div>
-    );
-};
+        
+        {state.todos.map((todo, idx) => {
+            return (
+                <div key={idx} className="todo-item">
+                    <h4 className="todo-text">{todo}</h4>
+                    <button className="btn-edit" onClick={() => dispatch({ type: "EDIT_TODO", payload: idx })}>Edit</button>
+                    <button className="btn-delete" onClick={() => dispatch({ type: "DELETE_TODO", payload: idx })}>Delete</button>
+                </div>
+            );
+        })}
+    </div> 
+);
+}
 
-export default Todo;
+export default ToDoList

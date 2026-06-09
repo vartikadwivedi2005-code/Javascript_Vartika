@@ -385,50 +385,66 @@
 // export default App
 
 
-import React, { useState } from 'react'
-import { Route, Routes } from "react-router-dom"
-import Home from "./Home"
-import NavBar from "./NavBar"
-import Cart from "./Cart"
-import About from './About'
+// import React, { useState } from 'react'
+// import { Route, Routes } from "react-router-dom"
+// import Home from "./Home"
+// import NavBar from "./NavBar"
+// import Cart from "./Cart"
+// import About from './About'
+
+// const App = () => {
+//   let [apiData, SetApiData] = useState([])
+//   let [cart, SetCart] = useState([])
+
+//   return (
+//     <div>
+//       {/* Global Style reset directly injected to make sure pages look cohesive */}
+//       <style>{`
+//         * {
+//           margin: 0;
+//           padding: 0;
+//           box-sizing: border-box;
+//         }
+//         body {
+//           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+//           background-color: #f9f9f9;
+//           color: #333;
+//         }
+//       `}</style>
+
+//       <NavBar cart={cart} />
+      
+//       <Routes>
+//         <Route 
+//           path="/" 
+//           element={<Home apiData={apiData} SetApiData={SetApiData} cart={cart} SetCart={SetCart} />} 
+//         />
+        
+//         <Route 
+//           path="/about" 
+//           element={<About />} 
+//         />
+//         <Route 
+//           path="/cart" 
+//           element={<Cart cart={cart} />} 
+//         />
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+import React from 'react'
+import ToDoList from './ToDoList'
+
 
 const App = () => {
-  let [apiData, SetApiData] = useState([])
-  let [cart, SetCart] = useState([])
-
   return (
     <div>
-      {/* Global Style reset directly injected to make sure pages look cohesive */}
-      <style>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-        body {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-          background-color: #f9f9f9;
-          color: #333;
-        }
-      `}</style>
-
-      <NavBar cart={cart} />
-      
-      <Routes>
-        <Route 
-          path="/" 
-          element={<Home apiData={apiData} SetApiData={SetApiData} cart={cart} SetCart={SetCart} />} 
-        />
-        
-        <Route 
-          path="/about" 
-          element={<About />} 
-        />
-        <Route 
-          path="/cart" 
-          element={<Cart cart={cart} />} 
-        />
-      </Routes>
+      <ToDoList/>
     </div>
   )
 }

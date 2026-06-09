@@ -1,138 +1,118 @@
-/* ==========================================================================
-   1. The Ultimate Center Fix 
-   Targeting html and body ensures the browser gives us the full window height
-   ========================================================================== */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%; /* Explicitly forces full screen height */
-  background-color: #0d0e12; /* Changes the whole page background to dark */
-  display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center;     /* Centers vertically */
-  font-family: system-ui, -apple-system, sans-serif;
+/* Container styling to center the card on the screen */
+.todo-container {
+    max-width: 480px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* ==========================================================================
-   2. The Black Container Box
-   ========================================================================== */
-.todo-wrapper {
-  width: 90%;
-  max-width: 360px; /* Perfectly slim profile */
-  background: #17191e; /* Deep midnight black box */
-  padding: 24px;
-  border-radius: 12px;
-  border: 1px solid #262930;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-  
-  /* Centers all fields internally too */
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  box-sizing: border-box;
+/* Form input layout wrapper */
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
 }
 
-/* Header Text (Now clearly visible) */
-h1 {
-  color: #ffffff; 
-  font-size: 22px;
-  margin: 0 0 16px 0;
-  text-align: center;
-  letter-spacing: -0.5px;
+/* Input box styling */
+.todo-input {
+    flex: 1;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #1a202c;
+    outline: none;
+    transition: all 0.2s ease-in-out;
 }
 
-/* Micro Inputs */
-input {
-  width: 100%;
-  background: #20232b;
-  border: 1px solid #2e323d;
-  border-radius: 6px;
-  color: #fff;
-  padding: 8px 12px;
-  font-size: 13px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-  text-align: center;
+/* Blue focus border when typing */
+.todo-input:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
 }
 
-input:focus {
-  outline: none;
-  border-color: #4f46e5;
+.todo-input::placeholder {
+    color: #a0aec0;
 }
 
-/* Primary Add Button */
-button:nth-of-type(1) {
-  width: 100%;
-  background: #4f46e5; /* Royal Indigo blue */
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 9px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 20px;
-  transition: background 0.2s;
+/* Primary Submit Button (Add / Update) */
+.btn-primary {
+    padding: 14px 24px;
+    background-color: #3182ce;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-button:nth-of-type(1):hover {
-  background: #3b32d4;
+.btn-primary:hover {
+    background-color: #2b6cb0;
 }
 
-/* ==========================================================================
-   3. Individual To-Do Rows
-   ========================================================================== */
+/* Individual list item rows */
 .todo-item {
-  width: 100%;
-  background: #1c1f26;
-  border: 1px solid #262930;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background-color: #f7fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 10px;
+    margin-top: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.todo-item h3 {
-  color: #e2e8f0;
-  margin: 0 0 10px 0;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
-  word-break: break-all;
+.todo-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-/* Inline Mini Tab/Pill Buttons */
-.todo-item button {
-  padding: 4px 12px;
-  font-size: 11px;
-  font-weight: 500;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 0 3px 8px 3px;
-  background: #2a2f3b;
-  color: #a0aec0;
-  transition: all 0.15s ease;
+/* The todo text block */
+.todo-text {
+    margin: 0;
+    flex: 1;
+    color: #2d3748;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    word-break: break-word;
 }
 
-/* Pill Hover Effects */
-.todo-item button:nth-of-type(1):hover {
-  background: #ef4444; /* Red for Delete */
-  color: white;
+/* Action control button defaults */
+.btn-edit, .btn-delete {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.todo-item button:nth-of-type(2):hover {
-  background: #3b82f6; /* Blue for Edit */
-  color: white;
+/* Soft blue button for edit action */
+.btn-edit {
+    background-color: #ebf8ff;
+    color: #2b6cb0;
 }
 
-/* Edit element spacing */
-.todo-item input {
-  margin-top: 4px;
-  margin-bottom: 0;
-  background: #121418;
+.btn-edit:hover {
+    background-color: #bee3f8;
+    color: #2c5282;
+}
+
+/* Soft red button for delete action */
+.btn-delete {
+    background-color: #fff5f5;
+    color: #e53e3e;
+}
+
+.btn-delete:hover {
+    background-color: #fed7d7;
+    color: #9b2c2c;
 }
