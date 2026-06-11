@@ -72,3 +72,34 @@
 // console.log(Number(undefined)); // NaN (when converting undefined to a number, it becomes NaN)
 // console.log(String(undefined)); // "undefined" (when converting undefined to a string, it becomes "undefined")
 
+// null--> 0
+// undefined--> NaN
+
+// console.log(String(true));
+// console.log(typeof String(true));
+// console.log(String(undefined));
+// console.log(typeof String(null));
+
+
+// Boolean convertion
+
+// console.log(Boolean(0));
+// console.log(Boolean('Hello World'));
+
+// computer science challenge
+// let a = 0.1
+// let b = 0.2
+
+// let c = a+b
+// console.log(c==0.3);
+// console.log(c);
+
+// 1: null is loosely equal to undefined only
+
+console.log(null==undefined);
+console.log(null===undefined);
+console.log(null==0);
+console.log(null=="");
+console.log(null==false);
+console.log(null==true);
+
