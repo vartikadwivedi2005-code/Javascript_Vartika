@@ -437,16 +437,90 @@
 
 
 
-import React from 'react'
-import ToDoList from './ToDoList'
+// import React from 'react'
+// import ToDoList from './ToDoList'
 
+
+// const App = () => {
+//   return (
+//     <div>
+//       <ToDoList/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// import React from 'react'
+// import useCounter from './useCounter';
+// import { useMemo } from 'react';
+
+// const App = () => {
+
+//   let {count,inc,dec,reset} = useCounter(0)
+//   let total=   useMemo(()=>{
+//     let res=0
+//     for(let i=0;i<1000000000;i++){
+//       res+=i;
+//     }
+//     return res
+//   },[])
+//   return (
+//     <div>
+//         <h3>{count}</h3>
+//         <h4>{total}</h4>
+//         <button onClick={inc}>++</button>
+//         <button onClick={dec}>--</button>
+//         <button onClick={reset}>reset</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   let [count,SetCount]= useState(0)
+//   return (
+//     <div>
+//       <h2>{count}</h2>
+//       <button onClick={()=>SetCount(count+1)}>add</button>
+//       <Child/>
+//     </div>
+//   )
+// }
+// const Child = () => {
+//   console.log("hello");
+//   return (
+//     <div>
+//       hello
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+import React, { memo, useMemo,  useState } from 'react'
 
 const App = () => {
+  let [count,SetCount]= useState(0)
   return (
     <div>
-      <ToDoList/>
+      <h2>{count}</h2>
+      <button onClick={()=>SetCount(count+1)}>add</button>
+      <Child/>
     </div>
   )
 }
+let Child = memo(function(){
+  console.log("hello");
+
+  return(<></>)
+})
 
 export default App
