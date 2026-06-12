@@ -353,36 +353,36 @@
 //   )
 // }
 
-// export default App
+// // export default App
 
 
-// import React from 'react'
-// import ToDoList from './ToDoList'
+// // import React from 'react'
+// // import ToDoList from './ToDoList'
 
-// const App = () => {
-//   return (
-//     <div>
-//       <ToDoList/>
-//     </div>
-//   )
-// }
+// // const App = () => {
+// //   return (
+// //     <div>
+// //       <ToDoList/>
+// //     </div>
+// //   )
+// // }
 
-// export default App
-
-
-// import React from 'react'
-// import Home from './Home'
+// // export default App
 
 
-// const App = () => {
-//   return (
-//     <div>
-//         <Home/>
-//     </div>
-//   )
-// }
+// // import React from 'react'
+// // import Home from './Home'
 
-// export default App
+
+// // const App = () => {
+// //   return (
+// //     <div>
+// //         <Home/>
+// //     </div>
+// //   )
+// // }
+
+// // export default App
 
 
 // import React, { useState } from 'react'
@@ -505,22 +505,38 @@
 
 
 
-import React, { memo, useMemo,  useState } from 'react'
+// import React, { memo, useMemo,  useState } from 'react'
+
+// const App = () => {
+//   let [count,SetCount]= useState(0)
+//   return (
+//     <div>
+//       <h2>{count}</h2>
+//       <button onClick={()=>SetCount(count+1)}>add</button>
+//       <Child/>
+//     </div>
+//   )
+// }
+// let Child = memo(function(){
+//   console.log("hello");
+
+//   return(<></>)
+// })
+
+// export default App
+
+
+import React from 'react'
+import Home from "./Home"
+// import Navbar from './Navbar'
 
 const App = () => {
-  let [count,SetCount]= useState(0)
   return (
     <div>
-      <h2>{count}</h2>
-      <button onClick={()=>SetCount(count+1)}>add</button>
-      <Child/>
+      <Home/>
+      {/* <Navbar/> */}
     </div>
   )
 }
-let Child = memo(function(){
-  console.log("hello");
-
-  return(<></>)
-})
 
 export default App
