@@ -542,23 +542,23 @@
 // // export default App
 
 
-import React from 'react'
-import UserList from "./UserList"
-import { Route, Routes } from "react-router-dom"
-import UserProfile from "./UserProfile"
+// import React from 'react'
+// import UserList from "./UserList"
+// import { Route, Routes } from "react-router-dom"
+// import UserProfile from "./UserProfile"
 
-const App = () => {
-  return (
-    <div>
-      <Routes>
-        <Route path="/" element={<UserList/>}></Route>
-         <Route path="/profile/:id" element={<UserProfile/>}></Route>
-      </Routes>
-    </div>
-  )
-}
+// const App = () => {
+//   return (
+//     <div>
+//       <Routes>
+//         <Route path="/" element={<UserList/>}></Route>
+//          <Route path="/profile/:id" element={<UserProfile/>}></Route>
+//       </Routes>
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
 
 
 
@@ -590,25 +590,25 @@ export default App
 
 
 
-// import React from 'react'
+import React from 'react'
 
-// const App = () => {
-//     Array.prototype.myReduce=function(cb,initialData=0){
-//         let sum=initialData
-//         for(let i=0;i<this.length;i++){
-//             sum=cb(sum,this[i])
-//         }
-//         return sum
-//     }
+const App = () => {
+    Array.prototype.myReduce=function(cb,initialData=0){
+        let sum=initialData
+        for(let i=0;i<this.length;i++){
+            sum=cb(sum,this[i])
+        }
+        return sum
+    }
 
-//     let arr=[1,2,3,4,5]
-//     let data = arr.reduce((a,b)=>{
-//         return a + b
-//     },10)
-//     console.log(data);
-//   return (
-//     <div>App</div>
-//   )
-// }
+    let arr=[1,2,3,4,5]
+    let data = arr.reduce((a,b)=>{
+        return a + b
+    },10)
+    console.log(data);
+  return (
+    <div>App</div>
+  )
+}
 
-// export default App
+export default App
